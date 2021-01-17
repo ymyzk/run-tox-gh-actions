@@ -1,0 +1,40 @@
+name: 'Run tox-gh-actions'
+author: Yusuke Miyazaki
+description: 'Utility to install and run tox and tox-gh-actions'
+inputs:
+  python-path:
+    description: 'Path to Python used for installing and running tox'
+    required: true
+    default: 'python'
+  tox-args:
+    description: 'Command line arguments when running tox'
+    required: true
+    default: ''
+  tox-version:
+    description: 'Version specifier (PEP 440) for tox'
+    required: true
+    default: ''
+  tox-gh-actions-version:
+    description: 'Version specifier (PEP 440) for tox-gh-actions'
+    required: true
+    default: ''
+runs:
+  using: composite
+  steps:
+    - name: Install tox and tox-gh-actions
+      shell: bash
+      run: |
+        echo "::group::Install tox and tox-gh-actions"
+        echo Installing tox and tox-gh-actions
+        echo "$ $(which ${{ inputs.python-path }}) -m pip install tox${{ inputs.tox-version }} tox-gh-actions${{ inputs.tox-gh-actions-version }}"
+        $(which ${{ inputs.python-path }}) -m pip install tox${{ inputs.tox-version }} tox-gh-actions${{ inputs.tox-gh-actions-version }}
+        echo "::endgroup::"
+    - name: Run tox
+      shell: bash
+      run: |
+        echo Running tox with tox-gh-actions
+        echo "$ tox ${{ inputs.tox-args }}"
+        tox ${{ inputs.tox-args }}
+branding:
+  color: green
+  icon: play
