@@ -18,6 +18,10 @@ inputs:
     description: 'Version specifier (PEP 440) for tox-gh-actions'
     required: true
     default: ''
+  working-directory:
+    description: 'Working directory to run tox'
+    required: true
+    default: '.'
 runs:
   using: composite
   steps:
@@ -31,6 +35,7 @@ runs:
         echo "::endgroup::"
     - name: Run tox
       shell: bash
+      working-directory: "${{ inputs.working-directory }}"
       run: |
         echo Running tox with tox-gh-actions
         echo "$ tox ${{ inputs.tox-args }}"
