@@ -1,12 +1,12 @@
 # run-tox-gh-actions
-**run-tox-gh-actions** is a [composite run steps action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-run-steps-action) which makes it easier to install and run tox with tox-gh-actions plugin on GitHub Actions.
+**run-tox-gh-actions** is a [composite run steps action](https://docs.github.com/en/actions/creating-actions/creating-a-composite-run-steps-action) which makes it easier to install and run tox with [tox-gh-actions](https://github.com/ymyzk/tox-gh-actions) plugin on GitHub Actions.
 
 ## Features
 * Install tox and tox-gh-actions
 * Run tox with tox-gh-actions
 
 ## Usage
-1. Follow README of tox-gh-actions to configure tox and tox-gh-actions
+1. Follow [README of tox-gh-actions](https://github.com/ymyzk/tox-gh-actions) to configure tox and tox-gh-actions
 2. Use this step in your GitHub Actions workflow
 
 ## Basic Example
