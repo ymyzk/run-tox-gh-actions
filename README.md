@@ -34,7 +34,7 @@ jobs:
     # Instead of installing and running tox and tox-gh-actions,
     # you can simply use this composite run steps action.
     - name: Run tox with tox-gh-actions
-      uses: ymyzk/tox-gh-actions@main
+      uses: ymyzk/run-tox-gh-actions@main
 ```
 
 ## Available Inputs
@@ -46,7 +46,7 @@ jobs:
   build:
     steps:
     - name: Run tox with tox-gh-actions
-      uses: ymyzk/tox-gh-actions@main
+      uses: ymyzk/run-tox-gh-actions@main
       with:
         tox-version: "==3.20.1"
 ```
