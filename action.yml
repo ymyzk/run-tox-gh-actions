@@ -31,7 +31,7 @@ runs:
         echo "::group::Install tox and tox-gh-actions"
         echo Installing tox and tox-gh-actions
         echo "$ $(which ${{ inputs.python-path }}) -m pip install tox${{ inputs.tox-version }} tox-gh-actions${{ inputs.tox-gh-actions-version }}"
-        $(which ${{ inputs.python-path }}) -m pip install tox${{ inputs.tox-version }} tox-gh-actions${{ inputs.tox-gh-actions-version }}
+        $(which ${{ inputs.python-path }}) -m pip install 'tox${{ inputs.tox-version }}' 'tox-gh-actions${{ inputs.tox-gh-actions-version }}'
         echo "::endgroup::"
     - name: Run tox
       shell: bash
